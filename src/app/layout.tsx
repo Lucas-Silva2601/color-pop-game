@@ -14,7 +14,12 @@ export default function RootLayout({
 }) {
   return (
     <html lang="pt-BR">
-      <body className="min-h-screen bg-slate-950 text-slate-100 antialiased">
+      {/* suppressHydrationWarning: extensões do navegador (ex: ColorZilla,
+          que injeta cz-shortcut-listen) alteram o <body> antes da hidratação */}
+      <body
+        suppressHydrationWarning
+        className="min-h-screen bg-slate-950 text-slate-100 antialiased"
+      >
         {children}
       </body>
     </html>

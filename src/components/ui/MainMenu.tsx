@@ -2,8 +2,8 @@
 
 import { BALL_BEHAVIORS } from "@/lib/config";
 import type { BallBehavior, GameMode, ScreenState } from "@/types/game";
-import { loadRecords } from "@/hooks/useRecords";
-import { useState } from "react";
+import { loadRecords, type Records } from "@/hooks/useRecords";
+import { useEffect, useState } from "react";
 
 interface Props {
   screen: ScreenState;
@@ -19,7 +19,12 @@ function menuFor(screen: ScreenState): { title: string; mode: GameMode } | null 
 }
 
 export default function MainMenu({ screen, onNavigate, onStart }: Props) {
-  const [records] = useState(loadRecords);
+  // Estado inicial vazio = igual ao HTML do servidor. Recordes são
+  // carregados após a hidratação para não divergir do SSR.
+  const [records, setRecords] = useState<Records>({});
+  useEffect(() => {
+    setRecords(loadRecords());
+  }, []);
 
   if (screen === "main-menu") {
     return (
