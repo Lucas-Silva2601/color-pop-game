@@ -4,9 +4,11 @@
   "private": true,
   "description": "Color Pop — puzzle game migrado de Pygame para React + Next.js + Tailwind CSS",
   "scripts": {
-    "dev": "next dev",
+    "dev": "node scripts/run-with-open.mjs dev",
+    "dev:no-open": "next dev",
     "build": "next build",
-    "start": "next start",
+    "start": "node scripts/run-with-open.mjs start",
+    "start:no-open": "next start",
     "lint": "next lint",
     "test": "vitest run",
     "test:watch": "vitest"
