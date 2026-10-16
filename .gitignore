@@ -143,8 +143,14 @@ cython_debug/
 *~
 .DS_Store
 
-# Game-specific files
+# Game-specific files (legado Pygame)
 save_data.json
+
+# Next.js
+.next/
+out/
+node_modules/
+next-env.d.ts
 
 # OS-specific files
 # Windows

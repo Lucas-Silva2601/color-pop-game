@@ -1,0 +1,22 @@
+@import "tailwindcss";
+
+:root {
+  color-scheme: dark;
+}
+
+html,
+body {
+  height: 100%;
+}
+
+body {
+  font-family: ui-sans-serif, system-ui, -apple-system, "Segoe UI", Roboto,
+    "Helvetica Neue", Arial, sans-serif;
+}
+
+/* Canvas do jogo com proporção 9:16 (360x640 do Pygame original) */
+.game-canvas {
+  touch-action: none;
+  user-select: none;
+  -webkit-user-select: none;
+}
