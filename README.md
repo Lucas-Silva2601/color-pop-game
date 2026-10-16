@@ -20,9 +20,10 @@
 
 > Clique nas bolinhas para alternar entre 2 cores. Vença a fase quando **todas na sua área tiverem a mesma cor**. Simples de aprender, difícil de largar.
 
-| Menu principal | Singleplayer | PvP local |
+<!-- TODO(portfolio): adicionar screenshots/GIFs atuais do jogo -->
+<!-- | Menu principal | Singleplayer | PvP local |
 |---|---|---|
-| ![Menu](docs/screenshots/main_menu.png) | ![Singleplayer](docs/screenshots/singleplayer.gif) | ![PvP](docs/screenshots/pvp.gif) |
+| ![Menu](docs/screenshots/main_menu.png) | ![Singleplayer](docs/screenshots/singleplayer.gif) | ![PvP](docs/screenshots/pvp.gif) | -->
 
 **Destaques do projeto:**
 
