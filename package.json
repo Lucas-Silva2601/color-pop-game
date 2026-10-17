@@ -9,6 +9,12 @@
     "build": "next build",
     "start": "node scripts/run-with-open.mjs start",
     "start:no-open": "next start",
+    "app:start": "node scripts/app.mjs start",
+    "app:start:prod": "node scripts/app.mjs start --prod",
+    "app:stop": "node scripts/app.mjs stop",
+    "app:restart": "node scripts/app.mjs restart",
+    "app:status": "node scripts/app.mjs status",
+    "app:open": "node scripts/app.mjs open",
     "lint": "next lint",
     "test": "vitest run",
     "test:watch": "vitest"

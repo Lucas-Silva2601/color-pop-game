@@ -8,6 +8,10 @@ next-env.d.ts
 # Build
 dist/
 
+# App manager (scripts/app.mjs)
+.app.pid
+.app.log
+
 # Env
 .env
 .env*.local

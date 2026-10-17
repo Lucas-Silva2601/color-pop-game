@@ -58,13 +58,38 @@ npm run dev        # abre o navegador sozinho ✅
 
 | Comando | O que faz |
 |---|---|
-| `npm run dev` | Dev server **+ abre o navegador** |
+| `npm run dev` | Dev server **+ abre o navegador** (terminal fica preso) |
 | `npm run dev:no-open` | Dev server sem abrir o navegador |
 | `npm run build` | Build de produção |
 | `npm start` | Produção **+ abre o navegador** |
 | `npm run lint` / `npx tsc --noEmit` | Lint + typecheck |
 
 Para desativar a abertura automática uma vez: `NO_OPEN=1 npm run dev` (ou `BROWSER=none`).
+
+### 🔁 Rodar em segundo plano (start / stop / restart)
+
+Estes comandos sobem a aplicação **desacoplada do terminal**, abrem o navegador
+sozinho e permitem parar/reiniciar depois:
+
+| Comando | O que faz |
+|---|---|
+| `npm run app:start` | Sobe em segundo plano e **abre o navegador** |
+| `npm run app:start:prod` | Igual, mas em modo produção (requer `npm run build`) |
+| `npm run app:stop` | Para a aplicação |
+| `npm run app:restart` | Reinicia no mesmo modo e porta |
+| `npm run app:status` | Mostra URL, PID, modo e se o HTTP responde |
+| `npm run app:open` | Apenas reabre o navegador na app que está rodando |
+
+No Windows também dá para **dar duplo clique** em `start.bat`, `stop.bat`,
+`restart.bat` e `status.bat` na raiz do projeto.
+
+Detalhes:
+
+- Se a porta `3000` estiver ocupada (por outro projeto, por exemplo), a próxima
+  porta livre é escolhida automaticamente e mostrada no terminal.
+- Ajuste manual: `npm run app:start -- --port 4000` ou `start.bat --port 4000`.
+- Para não abrir o navegador: `npm run app:start -- --no-open`.
+- O estado fica em `.app.pid` e os logs em `.app.log` (ambos no `.gitignore`).
 
 ---
 
@@ -103,7 +128,9 @@ public/
 └── fonts/                # ModernFont.ttf, PixelFont.ttf
 docs/screenshots/         # Prints e GIFs usados acima
 scripts/
-└── run-with-open.mjs      # Dev/prod + abertura automática do navegador
+├── run-with-open.mjs     # Dev/prod + abertura automática do navegador
+└── app.mjs               # start/stop/restart/status em segundo plano
+start.bat / stop.bat / restart.bat / status.bat  # atalhos no Windows
 ```
 
 ---
